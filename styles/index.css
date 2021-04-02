@@ -1,0 +1,74 @@
+.FilmsHolder{
+    
+    width: 70%;
+    background-color: lightgrey;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+}
+.FilmsHolder a{
+    color: black;
+    text-decoration: none;
+}
+
+.flex-colcent{
+    display: flex;
+    justify-content: center;
+}
+
+.filmCard{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin: 5px;
+    background-color: honeydew;
+    width: 220px;
+    min-height: 390px;
+
+}
+
+.filmCardTitle{
+    margin: 2px;
+    text-align: center;
+}
+.filmCardImg{
+    justify-self: center;
+    align-self: center;
+    min-height: 300px;
+    max-height: 300px;
+    margin: 5px;
+    height: 300px;
+    width: 200px;
+}
+.filmCardRD{
+}
+.filmCardGenre{
+}
+.filmCardCountry{
+}
+.filmCardText{
+    padding-left: 10px;
+    margin: 1px;
+    font-size: 14px;
+}
+.filterMenu{
+    margin-left: 15%;
+    width: 70%;
+    background-color: darkkhaki;
+}
+.filterMenu *{
+    margin: 2px;
+}
+
+.filterHolder{
+    display: inline-block;
+}
+
+.filterText{
+    color: black;
+}
+main{
+    padding: 5px;
+}

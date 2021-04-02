@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+header{
+    background-color: blueviolet;
+    height: 10vh;
+}
+footer{
+    background-color: blueviolet;
+    height: 10vh;
+}
+main{
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+
+
+
