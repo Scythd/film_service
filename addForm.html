@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/form.css">
+    <link rel="stylesheet" href="./styles/common.css">
+</head>
+
+<body>
+    <header>
+
+    </header>
+
+    <main>
+
+        <div>
+            <button onclick="window.location.href='index.html';" style="display: block">Назад</button>
+            <div>
+                <!--form action="result.html" method="POST" name=""-->
+                <label for="">Название </label><input type="text" name="fName" id="fName" required><span
+                    class="inputExcept">*</span> <span class="inputExcept">Поле не должно быть пустым</span> <br>
+                <label for="">Страна производства </label><input type="text" name="fCountry" id="fCountry"> <br>
+                <label for="">Жанр </label><input type="text" name="fGenre" id="fGenre"> <br>
+                <label for="">Режиссёр </label><input type="text" name="fDirector" id="fDirector"> <br>
+                <label for="">Сценарист </label><input type="text" name="fScreenwriter" id="fScreenwriter"> <br>
+                <label for="">Продюссер </label><input type="text" name="fProducer" id="fProducer"> <br>
+                <label for="">Оператор </label><input type="text" name="fOperator" id="fOperator"> <br>
+                <label for="">Композитор </label><input type="text" name="fComposer" id="fComposer"> <br>
+                <label for="">Бюджет </label><input type="text" name="fBudget" id="fBudget"> <br>
+                <label for="">Мировые сборы </label><input type="text" name="fBoxOffice" id="fBoxOffice"> <br>
+                <label for="">Язык </label><input type="text" name="fLanguage" id="fLanguage"> <br>
+                <label for="">Длительность </label><input type="text" name="fRunningTime" id="fRunningTime"> <br>
+                <label for="">Дата выхода </label><input type="date" name="fReleaseDate" id="fReleaseDate"> <br>
+                <label for="">Возрастной рейтинг (MPAA)</label>
+                <select name="fRateMPAA" id="fRateMPAA">
+                    <option value="G">G</option>
+                    <option value="PG">PG</option>
+                    <option value="PG-13">PG-13</option>
+                    <option value="R">R</option>
+                    <option value="NC-17">NC-17</option>
+                </select> <br>
+                <label for="">Постер </label><input type="file" accept=".jpg,.jpeg,.png,.bmp" name="ImgData"
+                    id="fImgData">
+                <p style="display:none" class="inputExcept">
+                    Фаил должен иметь одно из расширений: .jpg,.jpeg,.png,.bmp</p> <br>
+                <img src="" alt="" id="imgPreview"> <br>
+                <label for="">Описание или заметки </label><input type="text" name="fDescription" id="fDescription">
+                <br>
+                <button id="addbtn" onclick="add()">Добавить</button>
+                <!--/form-->
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+<script src="scripts/dbl.js"></script>
+<script src="scripts/objects.js"></script>
+<script src="scripts/addForm.js"></script>
+<script src="scripts/functions.js"></script>
+<script src="scripts/events.js"></script>
+
+</html>

@@ -1,0 +1,71 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/common.css">
+    <link rel="stylesheet" href="./styles/showFilm.css">
+    <title>Document</title>
+</head>
+
+<body id="target">
+    <header>
+    </header>
+    <main>
+        <div id="fCH">
+            <h2 id="ftitle"></h2>
+            <div id="filmCard">
+                <img id="fimg" src="" alt="" srcset="">
+                <div class="emptyColumn">
+                    &nbsp;
+                </div>
+                <div class="showInline">
+                    <label for="">Страна производства: </label>
+                    <p id="fcountry"> </p><br>
+                    <label for="">Жанр: </label>
+                    <p id="fgenre"></p> <br>
+                    <label for="">Режиссёр: </label>
+                    <p id="fdir"></p><br>
+                    <label for="">Сценарист: </label>
+                    <p id="fscen"></p> <br>
+                    <label for="">Продюссер: </label>
+                    <p id="fprod"></p><br>
+                    <label for="">Оператор: </label>
+                    <p id="fop"></p><br>
+                    <label for="">Композитор: </label>
+                    <p id="fcomp"></p><br>
+                    <label for="">Бюджет: </label>
+                    <p id="fbudg"></p> <br>
+                    <label for="">Мировые сборы: </label>
+                    <p id="fbo"></p><br>
+                    <label for="">Язык: </label>
+                    <p id="flang"></p> <br>
+                    <label for="">Длительность: </label>
+                    <p id="flen"></p> <br>
+                    <label for="">Дата выхода: </label>
+                    <p id="fdate"></p> <br>
+                    <label for="">Возрастной рейтинг (MPAA):</label>
+                    <p id="frate"></p> <br>
+                    <label for="">Описание:</label>
+                    <p id="fdesc"></p>
+                </div>
+            </div>
+        </div>
+        <div id="editbtns">
+            <button onclick="window.location.href='index.html';">На главную</button>
+            <button id="editBtn" onclick="editOn()">Изменить</button>
+            <button onclick="deleteThis()">Удалить</button>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+<script src="scripts/dbl.js"></script>
+<script src="scripts/objects.js"></script>
+<script src="scripts/functions.js"></script>
+<script src="scripts/events.js"></script>
+<script src="scripts/showinit.js"></script>
+
+</html>

@@ -1,0 +1,136 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/common.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav>
+        <a href="#1">1 задание</a> <br>
+        <a href="#2">2 задание</a> <br>
+        <a href="#3">3 задание</a> <br>
+        <a href="#4">4 задание</a> <br>
+    </nav>
+    <div class="container">
+        <div>
+            <a id="1"></a>
+            <h3>Пример 1: вернуть саммую длинную строку</h3>
+            <p>Введите строки:</p>
+            <input id="stringgetter0" type="text" style="display: block;">
+            <p id="ans1">&nbsp;</p>
+            <button onclick="bc1()">Выполнить</button>
+        </div>
+    </div>
+    <div class="container">
+        <div>
+            <a id="2"></a>
+            <h3>Пример 2: вернуть моду строки</h3>
+            <p></p>
+            <input id="t2" type="text">
+            <p id="ans2">&nbsp;</p>
+            <button onclick="bc2()">Выполнить</button>
+        </div>
+    </div>
+    <div class="container">
+        <div>
+            <a id="3"></a>
+            <h3>Пример 3: заменить символ моды на данный символ</h3>
+            <p>Введите строку;</p>
+            <input id="t31" type="text">
+            <p>Введите символ;</p>
+            <input id="t32" type="text">
+            <p id="ans3">&nbsp;</p>
+            <button onclick="bc3()">Выполнить</button>
+        </div>
+    </div>
+    <div class="container">
+        <div>
+            <a id="4"></a>
+            <h3>Пример 4: проверить, являются ли строки аннаграммами</h3>
+            <p></p>
+            <input id="t41" type="text">
+            <input id="t42" type="text">
+            <p id="ans4">&nbsp;</p>
+            <button onclick="bc4()">Выполнить</button>
+        </div>
+    </div>
+</body>
+<style>
+    nav {
+        position: fixed;
+        float: left;
+    }
+
+    .container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+</style>
+<script src="scripts/functions.js"></script>
+<script>
+    document.getElementById("stringgetter0").onchange = function addnext(e) {
+        let t = "stringgetter";
+        if (this.value != "" && (this.nextSibling.id == undefined || !this.nextSibling.id.includes(t))) {
+            let imp = document.createElement("input");
+            imp.type = "text";
+            imp.id = t + (Number.parseInt(this.id.charAt(t.length)) + 1);
+            imp.onchange = this.onchange;
+            imp.style.display = "block";
+            imp.style.margin = "0px 0px 5px 0px";
+            this.after(imp);
+        }
+    }
+
+    function bc1() {
+        let strArr = new Array();
+        let t = "stringgetter";
+        let i = 0, c;
+        while ((c = document.getElementById(t + i)) != undefined) {
+
+            i++;
+            strArr.push(c.value);
+            if (c.id != t + 0) {
+                c.remove()
+            } else {
+                c.value = "";
+            }
+        }
+        strArr.pop();
+        let str = getLongestString(strArr);
+        let p = document.getElementById("ans1");
+        p.innerHTML = str;
+
+    }
+
+    function bc2() {
+        let t = document.getElementById("t2");
+        document.getElementById("ans2").innerHTML = getFashion(t.value);
+        t.value = "";
+    }
+    function bc3(){
+        let i1 = document.getElementById("t31");
+        let i2 = document.getElementById("t32");
+        let res = changeFashionIn(i1.value, i2.value);
+        document.getElementById("ans3").innerHTML = res;
+        i1.value = "";
+        i2.value = "";
+    }
+
+    function bc4(){
+        let i3 = document.getElementById("t41");
+        let i4 = document.getElementById("t42");
+        let res = isAnagramm(i3.value, i4.value)
+        document.getElementById("ans4").innerHTML = res;
+        i3.value = "";
+        i4.value = "";
+    }
+
+</script>
+
+</html>

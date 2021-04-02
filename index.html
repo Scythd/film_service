@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/common.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <main>
+        <div class="filterMenu">
+            <div class="filterHolder">
+                <label class="filterText" for="genreFilter">Жанр: </label>
+                <input id="genreFilter" type="text">
+            </div>
+            <div class="filterHolder">
+                <label class="filterText" for="countryFilter">Страна производства </label>
+                <input id="countryFilter" type="text">
+            </div>
+            <div class="filterHolder">
+                <label class="filterText" for="">Дата выхода после: </label>
+                <input type="date" name="afterDate" id="afterDateFilter">
+            </div>
+            <div class="filterHolder">
+                <label class="filterText" for="">Дата выхода до: </label>
+                <input type="date" name="beforeDate" id="beforeDateFilter">
+            </div>
+            <button onclick="filtrate()">Применить </button>
+            <button onclick="toAddForm()">Добавить фильм</button>
+        </div>
+        <div class="flex-colcent">
+
+            <div id="FilmsHolder" class="FilmsHolder">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+<script src="scripts/dbl.js"></script>
+<script src="scripts/objects.js"></script>
+<script src="scripts/functions.js"></script>
+<script src="scripts/events.js"></script>
+<script src="scripts/indexinit.js"></script>
+
+</html>
