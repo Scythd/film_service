@@ -60,6 +60,7 @@ async function filtration(dateb, datea, ctry, genre) {
         
         
         generateFilmCard(x.id, x.imgData, x.name, x.genre, x.country, date);
+        
     });
 }
 

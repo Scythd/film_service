@@ -223,8 +223,21 @@ function generateFilmCard(id, imageData, title, genre, country, date) {
 
     holder.id = id;
     holder.onclick = function (e) {
-        sessionStorage.setItem["filmID"] = this.id;
         window.location.href = "ShowFilm.html?id="+this.id;
+    }
+    document.getElementById("FilmsHolder").appendChild(holder);
+}
+
+function decoyFilmCard() {
+
+    let holder = document.createElement("div");
+    holder.classList.add("filmCard");
+    holder.classList.add("flex__center");
+    let desc = document.createElement("div");
+    desc.innerHTML = "Добавить фильм";
+    holder.appendChild(desc);
+    holder.onclick = function (e) {
+        window.location.href = "addForm.html";
     }
     document.getElementById("FilmsHolder").appendChild(holder);
 }

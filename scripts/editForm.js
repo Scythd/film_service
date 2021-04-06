@@ -7,6 +7,7 @@ async function editinit() {
     let href = window.location.href;
     let id = href.substr(href.search("id=") + 3);
     let film = await getDataFromID(id);
+    fImgData = film.imgData;
     document.getElementById("imgPreview").src = film.imgData;
     document.getElementById("fName").value = film.name;
     document.getElementById("fCountry").value = film.country;
@@ -26,6 +27,7 @@ async function editinit() {
     if (isNaN(film.releaseDate)) {
         document.getElementById("fReleaseDate").value = "";
     } else {
+        date = new Date(film.releaseDate);
         document.getElementById("fReleaseDate").value = date.toISOString().substr(0, 10);
     }
     
