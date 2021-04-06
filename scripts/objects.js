@@ -56,12 +56,14 @@ class ShortFilm {
 
 class Comment {
     constructor() {
+        this.filmId = "";
         this.username = "";
         this.job = "";
         this.text = "";
         this.rate = "";
     }
-    init(un, j, t, r) {
+    init(un, j, t, r, fId) {
+        this.filmId = fId;
         this.username = un;
         this.job = j;
         this.text = t;

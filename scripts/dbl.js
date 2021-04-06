@@ -14,7 +14,7 @@ window.onload = async () => {
 
         try {
             await indexinit();
-        } catch {}
+        } catch { }
         if (window.location.href.includes("ShowFilm.html")) {
             await showInit();
         }
@@ -91,21 +91,6 @@ function displayData() {
     };
 }
 
-function displayDataC() {
-    var temp;
-    let objectStore = db.transaction('Comments').objectStore('Comments');
-    objectStore.openCursor().onsuccess = function (e) {
-        // Get a reference to the cursor
-        let cursor = e.target.result;
-
-        // If there is still another data item to iterate through, keep running this code
-        if (cursor) {
-            console.log(cursor.value);
-            cursor.continue();
-        }
-
-    };
-}
 
 function deleteDataFromName(nameToDel) {
     let tr = db.transaction(['films'], 'readwrite');
@@ -347,4 +332,109 @@ async function updateDataFromID(object, idTo) {
         await sleep(1000);
     }
     return;
+}
+
+
+
+function displayDataC() {
+    var temp;
+    let objectStore = db.transaction('Comments').objectStore('Comments');
+    objectStore.openCursor().onsuccess = function (e) {
+        // Get a reference to the cursor
+        let cursor = e.target.result;
+
+        // If there is still another data item to iterate through, keep running this code
+        if (cursor) {
+            console.log(cursor.value);
+            cursor.continue();
+        }
+
+    };
+}
+
+
+async function getDataCFromId(id) {
+    var arr = new Array();
+    var isEnded = false;
+    let objectStore = db.transaction('Comments').objectStore('Comments');
+    objectStore.openCursor().onsuccess = function (e) {
+        // Get a reference to the cursor
+        let cursor = e.target.result;
+
+        // If there is still another data item to iterate through, keep running this code
+        if (cursor) {
+            if (cursor.value.filmId == id) {
+                arr.push(cursor.value);
+            }
+            cursor.continue();
+        } else {
+            isEnded = true;
+        }
+
+    };
+    while (!isEnded) {
+        await sleep(1000);
+    }
+    return arr;
+}
+
+async function removeDataCFromRId(id) {
+    var isEnded = false;
+    let objectStore = db.transaction(['Comments'],'readwrite').objectStore('Comments');
+    objectStore.openCursor().onsuccess = function (e) {
+        // Get a reference to the cursor
+        let cursor = e.target.result;
+
+        // If there is still another data item to iterate through, keep running this code
+        if (cursor) {
+            if (cursor.value.id == id) {
+
+                cursor.delete();
+                isEnded = true;
+            } else {
+                cursor.continue();
+            }
+        } else {
+            isEnded = true;
+        }
+
+    };
+    while (!isEnded) {
+        await sleep(1000);
+    }
+}
+
+async function putDataC(rate) {
+    let transaction = db.transaction(['Comments'], 'readwrite');
+    transaction.oncomplete = function () {
+        console.log('Transaction completed: database modification finished.');
+    };
+    transaction.onerror = function () {
+        console.log('Transaction not opened due to error');
+    };
+    let objectStore = transaction.objectStore('Comments');
+    var request = objectStore.add(rate);
+}
+
+
+async function removeDataCAll() {
+    var isEnded = false;
+    let objectStore = db.transaction(['Comments'],'readwrite').objectStore('Comments');
+    objectStore.openCursor().onsuccess = function (e) {
+        // Get a reference to the cursor
+        let cursor = e.target.result;
+
+        // If there is still another data item to iterate through, keep running this code
+        if (cursor) {
+            cursor.delete();
+            cursor.continue();
+        }
+        else {
+            isEnded = true;
+        }
+
+    };
+    while (!isEnded) {
+        await sleep(1000);
+    }
 }
