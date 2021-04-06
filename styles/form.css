@@ -2,3 +2,60 @@
     margin: 0px;
     color: red;
 }
+
+main div div {
+    width: auto;
+    margin: 0px 10% 0px 10%;
+}
+
+main div div label {
+    margin-left: 20%;
+}
+
+main div div input {
+    background-color: papayawhip;
+    border-color: khaki;
+    color: black;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 40%;
+    min-width: 200px;
+    height: 26px;
+    
+}
+main div div select{
+    background-color: papayawhip;
+    border-color: khaki;
+    color: black;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 150px;
+    height: 26px;
+}
+#fDescription{
+    min-width: 450px;
+    width: 50%;
+}
+main div div img {
+    position: relative;
+    left: 50%;
+    margin-left: -200px;
+}
+
+main div div button {
+    width: 200px;
+    height: 30px;
+    position: relative;
+    left: 48%;
+    margin-left: -200px;
+    margin-right: 200px;
+}
+
+
+main div button{
+    margin-left: 100px;
+    width: 200px;
+    height: 30px;
+}
