@@ -19,6 +19,9 @@ async function showInit() {
     film.description==null?film.description = "":film.description=film.description;
 
     document.getElementById("ftitle").innerText = film.name;
+    if (film.imgData == ""){
+        film.imgData = "NoPoster.jpg";
+    }
     document.getElementById("fimg").src = film.imgData;
     document.getElementById("fcountry").innerText = film.country;
     document.getElementById("fgenre").innerText = film.genre;

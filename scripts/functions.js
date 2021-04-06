@@ -180,7 +180,7 @@ function generateFilmCard(id, imageData, title, genre, country, date) {
         date = "дата выходе не указана";
     }
     if (imageData === ""){
-        // paste another pic
+        imageData = "NoPoster.jpg";
     }
     if (genre === ""){
         genre = "жанр не указан";
