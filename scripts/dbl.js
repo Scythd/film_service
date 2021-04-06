@@ -12,9 +12,9 @@ window.onload = async () => {
         //displayData();
 
 
-        if (window.location.href.includes("index.html")) {
+        try {
             await indexinit();
-        }
+        } catch {}
         if (window.location.href.includes("ShowFilm.html")) {
             await showInit();
         }
