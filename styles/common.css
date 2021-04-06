@@ -18,6 +18,10 @@ main{
     align-content: center;
 }
 
-
+.flex__center{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
 
 

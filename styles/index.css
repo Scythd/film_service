@@ -14,6 +14,7 @@
 }
 
 .flex-colcent{
+    min-height: 80vh;
     display: flex;
     justify-content: center;
 }
@@ -26,6 +27,7 @@
     background-color: honeydew;
     width: 220px;
     min-height: 390px;
+    max-height: 430px;
 
 }
 
@@ -70,5 +72,6 @@
     color: black;
 }
 main{
+    min-height: 100vh;
     padding: 5px;
 }
