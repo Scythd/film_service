@@ -56,6 +56,18 @@
             <button onclick="window.location.href='index.html';">На главную</button>
             <button id="editBtn" onclick="editOn()">Изменить</button>
             <button onclick="deleteThis()">Удалить</button>
+            <button onclick="showComments()">Показать отзывы</button>
+            <button id="addRate" style="display: none;" onclick="addRate()">Добавить комментарий</button>
+        </div>
+        <div id="rateHolder">
+        </div>
+        <div id="rateAddForm">
+            <label for="">Введите ваш никнейм: </label> <input type="text" name="un" id="rAFUN"> <br>
+            <label for="">Укажите ваш род деятельности: </label> <input type="text" name="j" id="rAFJ"> <br>
+            <label for="">Напишите отзыв: </label> <input type="text" name="" id="rAFT"> <br>
+            <label for="">Поставьте свою оценку</label> <input type="number" name="" id="rAFR"> <br>
+            <button onclick="closeRate()">Отменить</button>
+            <button onclick="addRateFromForm()">Добавить</button>
         </div>
     </main>
     <footer>
