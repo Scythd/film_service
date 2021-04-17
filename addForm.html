@@ -20,6 +20,32 @@
         <div>
             <button onclick="window.location.href='index.html';" style="display: block">Назад</button>
             <div>
+                <div>
+                    <button onclick="
+                        let form = document.getElementById('apiForm');
+                        if (this.innerHTML == 'Заполнить форму по ссылке на themoviedb.org'){
+                            this.innerHTML = 'Скрыть'
+                            form.style.setProperty('display','block');
+                        } else {
+                            this.innerHTML = 'Заполнить форму по ссылке на themoviedb.org'
+                            form.style.setProperty('display','none');
+                        }">Заполнить форму по ссылке на themoviedb.org</button>
+
+                    <div id="apiForm" style="display: none; position: relative; border-radius: 10px; background-color: darkseagreen; padding: 2%;">
+                        <img width="100px" height="100px"
+                            style="left: 0; margin: 5px; background-color: white; padding: 5px;"
+                            src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg"
+                            alt="">
+                        <p style="color: white; font-size: 24px; font-weight: 600;">«Этот продукт использует API TMDb,
+                            но не одобрен и не сертифицирован TMDb».</p>
+                            <br>
+                            <label for="apiTarget" style="color: white;">
+                                Вставте ссылку на фильм, который хотите добавить.
+                            </label>
+                        <input type="url" name="apiTarget" id="apiTarget" style="width: 100%; position: relative;">
+                        <button onclick="fill(this)">Заполнить</button>
+                    </div>
+                </div>
                 <!--form action="result.html" method="POST" name=""-->
                 <label for="">Название </label><input type="text" name="fName" id="fName" required><span
                     class="inputExcept">*</span> <span class="inputExcept">Поле не должно быть пустым</span> <br>
